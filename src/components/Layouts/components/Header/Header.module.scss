@@ -1,0 +1,126 @@
+.wrapper{
+    height:  var(--default-layout-header-height);
+    --search-height:46px;
+    --serach-border-radius:92px;
+    --search-button-width:52px;
+    
+    width: 100%;
+    box-shadow: rgb(60 64 67 / 10%) 0px 0px 0px 0px, rgb(60 64 67 / 15%) 0px 2px 8px -2px;
+    display: flex;
+    justify-content: center;
+}
+.inner{
+    height: 100%;
+    width: var(--default-layout-width);
+    padding:  0 var(--default-layout-horizontal-spacer);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search,
+.search-result{
+    width: 361px;
+}
+
+.search{
+
+    position: relative;
+    display: flex;
+    height: var(--search-height);
+    background-color: rgba(22 ,24, 35, 0.06 );
+    border-radius: var(--serach-border-radius);
+    padding-left: 16px;
+    border: 1px solid transparent;
+    input{
+        flex: 1;
+        font-size:  1.6rem;
+        color: #828282;
+        background-color: transparent;
+        height: 100%;
+        color: var(--black);
+        caret-color: var(--primary);
+        padding-right: 45px;
+    }
+    input:not(:placeholder-shown) ~ .search-btn{
+        background-color: rgba(22 ,24, 35, 0.03 );
+
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top:50%;
+        right: var(--search-button-width);
+        width: 1px;
+        height: calc(var(--search-height) - 18px);
+        transform: translateY(-50%);
+        background-color: rgba(22 ,24, 35, 0.12 );
+    }
+    &:focus-within{
+        border: 1px solid rgba(22 ,24, 35, 0.2 );
+    }
+}
+.search-title{
+    padding: 5px 12px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 1.4rem;
+
+
+}
+.clear, 
+.loading{
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: calc(var(--search-button-width) + 18px);    
+background-color: rgba(22 ,24, 35, 0.03 );
+}
+
+.search-btn{
+width: var(--search-button-width);
+height: 100%;
+border-top-right-radius: var(--serach-border-radius);
+border-bottom-right-radius: var(--serach-border-radius);
+font-size: 1.8rem;
+color: rgba(22 ,24, 35, 0.34);
+    &:hover{
+        background-color: rgba(22 ,24, 35, 0.03 );
+        cursor: pointer;
+    }
+    &:active{
+        background-color: rgba(22 ,24, 35, 0.06 );
+
+    }
+
+}
+
+// action
+.action{
+    display: flex;
+    align-items: center;
+}
+
+
+.action-btn{
+    font-size: 2rem;
+    padding: 4px 12px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.avatar-user{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 12px;
+    object-fit: cover;
+}
+.more-btn{
+    margin-left: 8px;
+    font-size: 2rem;
+    background-color: transparent;
+    padding: 8px 16px;
+}
+
+
