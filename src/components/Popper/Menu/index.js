@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import styles from './Menu.module.scss';
@@ -34,27 +35,27 @@ function Menu({ children, items, onChange = { handleFc } }) {
                 interactive
                 placement="bottom-end"
                 visible
-                delay={[0,600]}
+                delay={[0, 600]}
                 offset={[10, 5]}
                 render={(attrs) => (
                     <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                        <Wrapper className={cx("menu-popper")}>
-                            {
-                                history.length > 1 &&
-                            <Header  title={'Language'} onBack={()=>{
-                                setHistory (pre => {
-                                   return pre.slice(0,pre.length - 1)                                    
-                                })
-                            }} />
-                            }
-                            <div className={cx('menu-language')}>
-                            {renderItems()}
-                            </div>
-                            </Wrapper>
+                        <Wrapper className={cx('menu-popper')}>
+                            {history.length > 1 && (
+                                <Header
+                                    title={current.title}
+                                    onBack={() => {
+                                        setHistory((pre) => {
+                                            return pre.slice(0, pre.length - 1);
+                                        });
+                                    }}
+                                />
+                            )}
+                            <div className={cx('menu-language')}>{renderItems()}</div>
+                        </Wrapper>
                     </div>
                 )}
-                onHide = {()=>{
-                    setHistory([{data:items}])
+                onHide={() => {
+                    setHistory([{ data: items }]);
                 }}
             >
                 {children}
@@ -62,5 +63,10 @@ function Menu({ children, items, onChange = { handleFc } }) {
         </>
     );
 }
+Menu.propTypes = {
+    children : PropTypes.node.isRequired,
+    items : PropTypes.array.isRequired,
+    onChange : PropTypes.func
+};
 
 export default Menu;
