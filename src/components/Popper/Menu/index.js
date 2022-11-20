@@ -33,6 +33,7 @@ function Menu({ children, items, onChange = { handleFc } }) {
             <Tippy
                 interactive
                 placement="bottom-end"
+                visible
                 delay={[0,600]}
                 offset={[10, 5]}
                 render={(attrs) => (
@@ -46,7 +47,9 @@ function Menu({ children, items, onChange = { handleFc } }) {
                                 })
                             }} />
                             }
+                            <div className={cx('menu-language')}>
                             {renderItems()}
+                            </div>
                             </Wrapper>
                     </div>
                 )}

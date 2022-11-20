@@ -1,37 +1,109 @@
 @import 'normalize.css';
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-:root{
---primary:#fe2c55;
---black: #000;
---text-color: #333;
---white: #fff;
---default-layout-width:1150px;
---default-layout-header-height:60px;
---default-layout-horizontal-spacer:24px;
+:root {
+    --primary: #fe2c55;
+    --black: #000;
+    --text-color: #333;
+    --font-famaly: 'ProximaNova', sans-serif;
+    --white: #fff;
+    --default-layout-width: 1150px;
+    --default-layout-header-height: 60px;
+    --default-layout-horizontal-spacer: 24px;
 }
-html{
-font-size: 62.5%;
+html {
+    font-size: 62.5%;
+}
 
-}
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-body{
-font-size: 1.5rem;
-font-family: 'Roboto', sans-serif;
-text-rendering: optimizespeed;
-color: var(--text-color);
+body {
+    font-size: 1.5rem;
+    font-family: var(--font-famaly);
+    text-rendering: optimizespeed;
+    color: var(--text-color);
+    font-weight: 600;
+    overflow-y: auto;
 }
-input,button,[tabindex]{
+input,
+button,
+[tabindex] {
     outline: none;
     border: none;
 }
-a[href]{
+a[href] {
     text-decoration: none;
-
 }
+// sroll
+html ::-webkit-scrollbar {
+    border-radius: 0px;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+// font
+@font-face {
+    font-family: ProximaNova;
+    src: url(../../assets/fonts/Proxima-Nova-Regular.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url(../../assets/fonts/Proxima-Nova-Semibold.woff2);
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url(../../assets/fonts/Proxima-Nova-Bold.woff);
+    font-weight: 700;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url(../../assets/fonts/sofiapro-bold.woff2);
+    font-weight: 700;
+}
+
 body {
     .tippy-box {
         background-color: var(--text-color);
